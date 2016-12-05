@@ -1,0 +1,70 @@
+$glass: #fff;
+$fluid: #f34e54;
+
+#thermometer {
+    position: absolute;
+    top:50px;
+    left:30px;
+    height: 400px;
+    width: 100px;
+    z-index: 10;
+    .glass {
+        background:$glass;
+        border-radius: 100px 100px 0 0;
+        display: block;
+        height: 300px;
+        margin: 0 auto;
+        padding: 10px;
+        position: relative;
+        width: 50px;
+    }
+    .amount {
+        background: $fluid;
+        border-radius: 100px;
+        display: block;
+        width: 30px;
+        position: absolute;
+        bottom: 5px;
+        transition: all 2s;
+    }
+}
+
+.bulb {
+    background: $glass;
+    border-radius: 100px;
+    display: block;
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+    top: -20px;
+    z-index: 11;
+    .red-circle {
+        background: $fluid;
+        border-radius: 100px;
+        display: block;
+        height: 80px;
+        width: 80px;
+    }
+    .filler {
+        background: $fluid;
+        border-radius: 100px 100px 0 0;
+        display: block;
+        margin: auto;
+        height: 60px;
+        width: 30px;
+        position: relative;
+        top: -105px;
+        z-index: 30;
+    }
+}
+
+.shade {
+    background-color: rgba(0,0,0,0.2);
+    height: 20px;
+    border-radius:100%;
+    position: relative;
+    top:-10px;
+    z-index: 9;
+}
