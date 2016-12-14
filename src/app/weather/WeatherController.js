@@ -2,10 +2,10 @@ angular.module('app')
   .controller('WeatherController', WeatherController);
 
 /** @ngInject */
-function WeatherController($document, $log, $timeout, AppConfig) {
+function WeatherController($document, $log, $timeout, OpenWeatherService) {
   var vm = this;
 
-  $log.log("WeatherController loaded.", AppConfig);
+  $log.log("WeatherController loaded.");
 
   function getPercentageFromValues(val, min, max) {
     var percentage = (val - min) / (max - min) * 100;
@@ -13,14 +13,16 @@ function WeatherController($document, $log, $timeout, AppConfig) {
   }
 
   function init() {
-    vm.temperature = 20;
-    vm.thermometerStyle = {};
+    vm.thermometerStyle = {
+      height: '0%'
+    };
 
-    $timeout(function () {
+    OpenWeatherService.getTodayWeather().success(function (data) {
+      vm.temperature = data.main.temp;
       vm.thermometerStyle = {
         height: getPercentageFromValues(vm.temperature, -10, 35)
       };
-    }, 200);
+    });
   }
   init();
 }
