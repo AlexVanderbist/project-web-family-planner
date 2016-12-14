@@ -17,5 +17,10 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: 'weather',
       templateUrl: 'app/weather/weather.html',
       controller: 'WeatherController as weather'
+    })
+    .state('app.transport', {
+      url: 'transport',
+      templateUrl: 'app/transport/transport.html',
+      controller: 'TransportController as transport'
     });
 }

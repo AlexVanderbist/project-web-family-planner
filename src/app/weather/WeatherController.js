@@ -5,14 +5,14 @@ angular.module('app')
 function WeatherController($document, $log, $timeout, OpenWeatherService) {
   var vm = this;
 
-  $log.log("WeatherController loaded.");
-
   function getPercentageFromValues(val, min, max) {
     var percentage = (val - min) / (max - min) * 100;
     return percentage + '%';
   }
 
   function init() {
+    $log.debug("WeatherController loaded.");
+
     vm.thermometerStyle = {
       height: '0%'
     };
