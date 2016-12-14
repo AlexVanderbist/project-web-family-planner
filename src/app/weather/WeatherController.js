@@ -2,10 +2,10 @@ angular.module('app')
   .controller('WeatherController', WeatherController);
 
 /** @ngInject */
-function WeatherController($document, $log, $timeout) {
+function WeatherController($document, $log, $timeout, AppConfig) {
   var vm = this;
 
-  $log.log("WeatherController loaded.");
+  $log.log("WeatherController loaded.", AppConfig);
 
   function getPercentageFromValues(val, min, max) {
     var percentage = (val - min) / (max - min) * 100;
