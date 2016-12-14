@@ -10,7 +10,8 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
   $stateProvider
     .state('app', {
       url: '/',
-      template: '<ui-view/>'
+      template: '<ui-view/>',
+      controller: 'MainController as main'
     })
     .state('app.weather', {
       url: 'weather',
