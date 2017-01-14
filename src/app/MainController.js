@@ -8,11 +8,11 @@ function MainController($timeout, $state, $log) {
   var slides = [
     {
       name: 'weather',
-      duration: 1000
+      duration: 5000
     },
     {
       name: 'transport',
-      duration: 4000
+      duration: 2000
     }
   ];
 
