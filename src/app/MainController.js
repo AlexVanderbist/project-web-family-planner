@@ -24,7 +24,7 @@ function MainController($timeout, $state, $log) {
 
   function _init() {
     $log.debug('MainController loaded!');
-    nextSlide();
+    //nextSlide();
   }
   _init();
 }

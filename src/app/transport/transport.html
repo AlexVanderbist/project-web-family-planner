@@ -1,5 +1,22 @@
-<h1>Transport</h1>
+<div class="slide slide-transport">
 
-<ul>
-  <li ng-repeat="bus in transport.nextBusses">{{bus.lijnNummer}} in {{bus.vertrekTijd}}</li>
-</ul>
+  <div class="content" ng-show="transport.nextBusses[0]">
+    <h2>Volgende bus in</h2>
+    <h1>{{transport.formatDepartureTime(transport.nextBusses[0].vertrekTijd)}} minuten</h1>
+  </div>
+
+  <div class="schedule-ticker">
+    <h2 class="text-center" ng-hide="transport.nextBusses.length">Laden...</h2>
+    <table class="table table-condensed ">
+      <tr ng-repeat="bus in transport.nextBusses">
+        <td class="lijnNummer">{{bus.lijnNummer}}</td>
+        <td>{{bus.bestemming}}</td>
+        <td class="vertrekTijd">{{bus.vertrekTijd}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <img src="images/slides/transport/bus.png" alt="Bus" class="bus">
+  <div id="city-bg"></div>
+
+</div>

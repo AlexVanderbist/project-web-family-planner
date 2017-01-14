@@ -1,5 +1,8 @@
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap";
 
-@import "src/styles/general";
+@import "src/styles/_general";
 
-@import "src/app/weather/weather";
+@import "src/styles/molecules/_thermometer";
+
+@import "src/styles/slides/_weather";
+@import "src/styles/slides/_transport";

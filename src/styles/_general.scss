@@ -14,6 +14,24 @@ html, body {
   height: 100%;
   background: #eee;
   overflow: hidden;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1, .h1, h2, .h2 {
+  font-weight: normal;
+}
+
+h1, .h1 {
+  font-family: 'Dosis', sans-serif;
+}
+
+.slide {
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  width: 800px;
+  height: 480px;
+  background-color: black;
 }
 
 .family {
@@ -43,11 +61,11 @@ html, body {
 @-webkit-keyframes Floatingx{
     from {-webkit-transform:translate(0, 0px);}
     65% {-webkit-transform:translate(0, 15px);}
-    to {-webkit-transform: translate(0, -0px);    }    
+    to {-webkit-transform: translate(0, -0px);    }
 }
-    
+
 @-moz-keyframes Floating{
     from {-moz-transform:translate(0, 0px);}
     65% {-moz-transform:translate(0, 15px);}
-    to {-moz-transform: translate(0, -0px);}    
+    to {-moz-transform: translate(0, -0px);}
 }

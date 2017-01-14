@@ -1,23 +1,19 @@
-@import "src/app/weather/thermometer";
-
-$ground: #90db1c;
-$crater: rgba(0, 0, 0, .1);
-$sky: #7cedf5;
-$hillsDark: #1a7764;
-$hillsLight: #61bc33;
-
-#weather {
+.slide.slide-weather {
+  $ground: #90db1c;
+  $crater: rgba(0, 0, 0, .1);
+  $sky: #7cedf5;
+  $hillsDark: #1a7764;
+  $hillsLight: #61bc33;
+  #weather {
     background-color: $ground;
-}
-
-.landscape {
+  }
+  .landscape {
     position: relative;
     height: 400px;
     background: $sky;
     overflow: hidden;
-}
-
-.sun {
+  }
+  .sun {
     position: absolute;
     left: 55%;
     bottom: 100px;
@@ -26,9 +22,8 @@ $hillsLight: #61bc33;
     margin: 0 0 0 -50px;
     border-radius: 50%;
     background: #fff27d;
-}
-
-.moon {
+  }
+  .moon {
     display: none;
     position: absolute;
     left: 55%;
@@ -38,9 +33,8 @@ $hillsLight: #61bc33;
     margin: 0 0 0 -50px;
     border-radius: 50%;
     background: #ccc;
-}
-
-.moon:after {
+  }
+  .moon:after {
     top: 100px;
     left: 100px;
     width: 50px;
@@ -49,16 +43,14 @@ $hillsLight: #61bc33;
     background: $crater;
     box-shadow: 120px 80px 0 $crater, 100px -60px 0 -20px $crater, -70px 40px 0 -20px $crater, -20px -50px 0 -15px $crater, -20px 120px 0 -15px $crater, 50px 50px 0 -15px $crater;
     ;
-}
-
-.trees {
+  }
+  .trees {
     position: absolute;
     left: 50%;
     bottom: 0;
     margin: 0 0 0 -320px;
-}
-
-.trees div {
+  }
+  .trees div {
     position: relative;
     float: left;
     display: block;
@@ -66,9 +58,8 @@ $hillsLight: #61bc33;
     height: 8px;
     margin: 0 30px -5px 0;
     background: $ground;
-}
-
-.trees div:before {
+  }
+  .trees div:before {
     bottom: 8px;
     border: solid transparent;
     content: " ";
@@ -79,9 +70,8 @@ $hillsLight: #61bc33;
     border-width: 12px;
     left: 50%;
     margin-left: -12px;
-}
-
-.trees div:after {
+  }
+  .trees div:after {
     bottom: 15px;
     border: solid transparent;
     content: " ";
@@ -92,9 +82,8 @@ $hillsLight: #61bc33;
     border-width: 10px;
     left: 50%;
     margin-left: -10px;
-}
-
-.trees div span:before {
+  }
+  .trees div span:before {
     bottom: 22px;
     border: solid transparent;
     content: " ";
@@ -105,9 +94,8 @@ $hillsLight: #61bc33;
     border-width: 8px;
     left: 50%;
     margin-left: -8px;
-}
-
-.trees div span:after {
+  }
+  .trees div span:after {
     bottom: 28px;
     border: solid transparent;
     content: " ";
@@ -118,63 +106,54 @@ $hillsLight: #61bc33;
     border-width: 6px;
     left: 50%;
     margin-left: -6px;
-}
-
-.hills {
+  }
+  .hills {
     position: absolute;
     left: 50%;
     bottom: 0;
-}
-
-.hills div {
+  }
+  .hills div {
     overflow: hidden;
     border-radius: 8%;
     transform: rotate(45deg);
-}
-
-.hills div:nth-child(1),
-.hills div:nth-child(2),
-.hills div:nth-child(3) {
+  }
+  .hills div:nth-child(1),
+  .hills div:nth-child(2),
+  .hills div:nth-child(3) {
     position: absolute;
     bottom: -350px;
     width: 500px;
     height: 500px;
     background: $hillsDark;
-}
-
-.hills div:nth-child(1) {
+  }
+  .hills div:nth-child(1) {
     left: -750px;
-}
-
-.hills div:nth-child(2) {
+  }
+  .hills div:nth-child(2) {
     left: -250px;
-}
-
-.hills div:nth-child(3) {
+  }
+  .hills div:nth-child(3) {
     left: 250px;
-}
-
-.hills div:nth-child(4),
-.hills div:nth-child(5) {
+  }
+  .hills div:nth-child(4),
+  .hills div:nth-child(5) {
     position: absolute;
     bottom: -400px;
     left: -600px;
     width: 500px;
     height: 500px;
     background: $hillsLight;
-}
-
-.hills div:nth-child(4) {
+  }
+  .hills div:nth-child(4) {
     left: -500px;
-}
-
-.hills div:nth-child(5) {
+  }
+  .hills div:nth-child(5) {
     left: 0;
-}
-
-canvas {
+  }
+  canvas {
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
+  }
 }

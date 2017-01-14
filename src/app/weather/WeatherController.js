@@ -17,11 +17,13 @@ function WeatherController($document, $log, $timeout, OpenWeatherService) {
       height: '0%'
     };
 
-    OpenWeatherService.getTodayWeather().success(function (data) {
-      vm.temperature = data.main.temp;
+    OpenWeatherService.getTodayWeather().then(function (response) {
+      vm.temperature = response.data.main.temp;
       vm.thermometerStyle = {
         height: getPercentageFromValues(vm.temperature, -10, 35)
       };
+    }, function (response) {
+      $log.error("Couldn't get weather from OpenWeatherService", response);
     });
   }
   init();
