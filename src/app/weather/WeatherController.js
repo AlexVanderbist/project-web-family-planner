@@ -2,7 +2,7 @@ angular.module('app')
   .controller('WeatherController', WeatherController);
 
 /** @ngInject */
-function WeatherController($document, $log, $timeout, OpenWeatherService) {
+function WeatherController($document, $log, $timeout, OpenWeatherService, $interval) {
   var vm = this;
 
   vm.thermometerStyle = {
@@ -28,6 +28,10 @@ function WeatherController($document, $log, $timeout, OpenWeatherService) {
     }, function (response) {
       $log.error("Couldn't get weather from OpenWeatherService", response);
     });
+    
+    $interval(function() {
+      vm.time = (vm.time === 'day' ? 'night' : 'day');
+    }, 5000);
   }
   init();
 }

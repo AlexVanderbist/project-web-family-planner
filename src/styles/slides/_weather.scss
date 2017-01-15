@@ -51,10 +51,18 @@
     }
     .moon {}
   }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 300;
+  }
 
   .content {
     left: 130px;
     top: 30px;
+    transition: all $animationTime;
   }
 
   .landscape {
