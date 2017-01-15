@@ -5,6 +5,13 @@ angular.module('app')
 function WeatherController($document, $log, $timeout, OpenWeatherService) {
   var vm = this;
 
+  vm.thermometerStyle = {
+    height: '0%'
+  };
+
+  // Set time to day or night
+  vm.time = ((new Date()).getHours() > 20 || (new Date()).getHours() < 8 ? 'night' : 'day');
+
   function getPercentageFromValues(val, min, max) {
     var percentage = (val - min) / (max - min) * 100;
     return percentage + '%';
@@ -12,10 +19,6 @@ function WeatherController($document, $log, $timeout, OpenWeatherService) {
 
   function init() {
     $log.debug("WeatherController loaded.");
-
-    vm.thermometerStyle = {
-      height: '0%'
-    };
 
     OpenWeatherService.getTodayWeather().then(function (response) {
       vm.temperature = response.data.main.temp;

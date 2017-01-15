@@ -22,5 +22,10 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: 'transport',
       templateUrl: 'app/transport/transport.html',
       controller: 'TransportController as transport'
+    })
+    .state('app.messages', {
+      url: 'messages',
+      templateUrl: 'app/messages/messages.html',
+      controller: 'MessagesController as messages'
     });
 }

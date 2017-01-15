@@ -1,5 +1,11 @@
-<div class="slide slide-weather">
-  <div id="thermometer">
+<div class="slide slide-weather" ng-class="weather.time">
+
+  <div class="content">
+    <h1>25°C, regen</h1>
+    <h2>Morgen 20°C, sneeuw</h2>
+  </div>
+
+  <div id="thermometer" ng-click="weather.time = (weather.time === 'day' ? 'night' : 'day')">
     <span class="glass floating">
       <span class="amount" ng-style="weather.thermometerStyle" style="height: 0%"></span>
     </span>
@@ -45,8 +51,8 @@
   </div>
 
   <canvas id="snow"></canvas>
-
+<!--
   <div class="family">
 
-  </div>
+  </div>-->
 </div>

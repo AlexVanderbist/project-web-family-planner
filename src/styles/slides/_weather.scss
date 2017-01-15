@@ -1,38 +1,90 @@
 .slide.slide-weather {
   $ground: #90db1c;
-  $crater: rgba(0, 0, 0, .1);
   $sky: #7cedf5;
   $hillsDark: #1a7764;
   $hillsLight: #61bc33;
-  #weather {
-    background-color: $ground;
+  $ground-night: #151f2a;
+  $sky-night: #234;
+  $hillsDark-night: lighten($sky-night, 4%);
+  $hillsLight-night: lighten($sky-night, 8%);
+  $crater: rgba(0, 0, 0, .1);
+
+  $animationTime: 1500ms;
+
+  background-color: $ground;
+  transition: all $animationTime;
+
+  &.day {
+    .moon {
+      transform: translate(-200px, 400px);
+    }
   }
+  &.night {
+    background-color: $ground-night;
+    .content {
+      left: 360px;
+      color: lightgrey;
+    }
+    .landscape {
+      background-color: $sky-night;
+    }
+    .trees div {
+      background-color: $ground-night;
+    }
+    .trees div:before,
+    .trees div:after,
+    .trees div span:before,
+    .trees div span:after {
+      border-bottom-color: $ground-night;
+    }
+    .hills div:nth-child(1),
+    .hills div:nth-child(2),
+    .hills div:nth-child(3) {
+      background: $hillsDark-night;
+    }
+    .hills div:nth-child(4),
+    .hills div:nth-child(5) {
+      background: $hillsLight-night;
+    }
+    .sun {
+      transform: translate(200px, 400px);
+    }
+    .moon {}
+  }
+
+  .content {
+    left: 130px;
+    top: 30px;
+  }
+
   .landscape {
+    z-index: 100;
     position: relative;
     height: 400px;
-    background: $sky;
     overflow: hidden;
+    background-color: $sky;
   }
   .sun {
     position: absolute;
     left: 55%;
-    bottom: 100px;
+    bottom: 70px;
     width: 350px;
     height: 350px;
     margin: 0 0 0 -50px;
     border-radius: 50%;
     background: #fff27d;
+    transition: all $animationTime;
   }
   .moon {
-    display: none;
     position: absolute;
-    left: 55%;
-    bottom: 100px;
+    right: 58%;
+    bottom: 70px;
     width: 350px;
     height: 350px;
     margin: 0 0 0 -50px;
     border-radius: 50%;
     background: #ccc;
+    transition: all $animationTime;
   }
   .moon:after {
     top: 100px;
@@ -58,6 +110,7 @@
     height: 8px;
     margin: 0 30px -5px 0;
     background: $ground;
+    transition: all $animationTime;
   }
   .trees div:before {
     bottom: 8px;
@@ -70,6 +123,7 @@
     border-width: 12px;
     left: 50%;
     margin-left: -12px;
+    transition: all $animationTime;
   }
   .trees div:after {
     bottom: 15px;
@@ -82,6 +136,7 @@
     border-width: 10px;
     left: 50%;
     margin-left: -10px;
+    transition: all $animationTime;
   }
   .trees div span:before {
     bottom: 22px;
@@ -94,6 +149,7 @@
     border-width: 8px;
     left: 50%;
     margin-left: -8px;
+    transition: all $animationTime;
   }
   .trees div span:after {
     bottom: 28px;
@@ -106,11 +162,12 @@
     border-width: 6px;
     left: 50%;
     margin-left: -6px;
+    transition: all $animationTime;
   }
   .hills {
     position: absolute;
     left: 50%;
-    bottom: 0;
+    bottom: -30px;
   }
   .hills div {
     overflow: hidden;
@@ -125,6 +182,7 @@
     width: 500px;
     height: 500px;
     background: $hillsDark;
+    transition: all $animationTime;
   }
   .hills div:nth-child(1) {
     left: -750px;
@@ -143,6 +201,7 @@
     width: 500px;
     height: 500px;
     background: $hillsLight;
+    transition: all $animationTime;
   }
   .hills div:nth-child(4) {
     left: -500px;
