@@ -3,12 +3,21 @@ angular
   .service('ApiService', ApiService);
 
 /** ngInject */
-function ApiService($http, $log) {
+function ApiService($http, $log, ScreenConfigService, AppConfig) {
   var svc = this;
 
-  const baseUrl = 'http://planni.app/api/';
+  const options = {
+    headers: {
+      'PlanniScreenCode': ScreenConfigService.screenCode
+    }
+  };
 
   svc.getMessages = function (eventId) {
-    return $http.get(baseUrl + 'messages');
+    return $http.get(AppConfig.apiUrl + 'messages', options);
   }
+
+  svc.getScreenConfig = function () {
+    return $http.get(AppConfig.apiUrl + 'screen', options);
+  }
+
 }

@@ -3,8 +3,10 @@ angular
   .service('OpenWeatherService', OpenWeatherService);
 
 /** @ngInject */
-function OpenWeatherService($log, appConfig, $http) {
+function OpenWeatherService($log, $http) {
   var svc = this;
+
+  var apiKey = '5e82f8d95dafe191dfa259b75be0520c';
 
   svc.getTodayWeather = function () {
     return $http({
@@ -12,7 +14,7 @@ function OpenWeatherService($log, appConfig, $http) {
       url: 'http://api.openweathermap.org/data/2.5/weather',
       params: {
         q: 'Antwerp,BE',
-        apikey: appConfig.openWeatherApi.apiKey,
+        apikey: apiKey,
         units: 'metric'
       }
     });

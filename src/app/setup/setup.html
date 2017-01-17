@@ -1,0 +1,18 @@
+<div class="slide slide-setup">
+  <div ng-hide="setup.screenName">
+    <h1>Hello, I'm a Planni Screen!</h1>
+    <p class="lead">
+      Go to <strong>{{setup.uiUrl}}</strong>to configure me<br>
+      and use the following code:<br>
+      <span class="code">{{setup.screenCode}}</span>
+    </p>
+  </div>
+
+  <div ng-show="setup.screenName">
+    <h1>{{setup.screenName}}</h1>
+    <p class="lead">We're done here! Have fun using your Planni!</p>
+    <p class="lead">Get ready... {{setup.countdown}}</p>
+  </div>
+
+  <img src="images/planni_char_white.svg" class="planni-char" alt="Planni">
+</div>

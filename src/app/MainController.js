@@ -4,6 +4,8 @@ angular
 
 /** @ngInject */
 function MainController($timeout, $state, $log) {
+
+  // Variables
   var currentSlideId = 0;
   var slides = [
     {
@@ -24,6 +26,7 @@ function MainController($timeout, $state, $log) {
 
   function _init() {
     $log.debug('MainController loaded!');
+
     //nextSlide();
   }
   _init();

@@ -1,11 +1,11 @@
 <div class="slide slide-weather" ng-class="weather.time">
-  
+
   <div class="overlay">
     <img src="images/slides/weather/overlay.png"/>
   </div>
 
   <div class="content">
-    <h1>3°C, foggy</h1>
+    <h1>{{weather.temperature | number: 1}}°C, {{weather.weatherDescription}}</h1>
     <h2>Tomorrow 2°C, snow</h2>
   </div>
 

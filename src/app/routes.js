@@ -8,9 +8,15 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('/weather');
 
   $stateProvider
+    .state('setup', {
+      url: '/setup',
+      templateUrl: 'app/setup/setup.html',
+      controller: 'SetupController as setup'
+    })
     .state('app', {
       url: '/',
       template: '<ui-view/>',
+      redirectTo: 'app.weather',
       controller: 'MainController as main'
     })
     .state('app.weather', {

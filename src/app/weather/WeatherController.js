@@ -21,6 +21,7 @@ function WeatherController($document, $log, $timeout, OpenWeatherService, $inter
     $log.debug("WeatherController loaded.");
 
     OpenWeatherService.getTodayWeather().then(function (response) {
+      vm.weatherDescription = response.data.weather[0].main;
       vm.temperature = response.data.main.temp;
       vm.thermometerStyle = {
         height: getPercentageFromValues(vm.temperature, -10, 35)
@@ -28,7 +29,7 @@ function WeatherController($document, $log, $timeout, OpenWeatherService, $inter
     }, function (response) {
       $log.error("Couldn't get weather from OpenWeatherService", response);
     });
-    
+
     $interval(function() {
       vm.time = (vm.time === 'day' ? 'night' : 'day');
     }, 5000);

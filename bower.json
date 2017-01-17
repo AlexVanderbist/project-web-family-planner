@@ -4,9 +4,17 @@
   "dependencies": {
     "angular": "^1.5.0",
     "bootstrap-sass": "^3.3.7",
-    "angular-ui-router": "^0.3.2"
+    "angular-i18n": "^1.6.1",
+    "angular-ui-router": "1.0.0-rc.1"
   },
   "devDependencies": {
     "angular-mocks": "^1.5.0"
+  },
+  "overrides": {
+    "angular-i18n": {
+      "main": [
+        "./angular-locale_be.js"
+      ]
+    }
   }
 }

@@ -1,0 +1,21 @@
+.slide.slide-setup {
+  //background-color: #009dde;
+  color: white;
+
+  background: #009dde; /* fallback for old browsers */
+  background: linear-gradient(to bottom, #007db7, #009dde); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  padding: 40px;
+  .code {
+    text-transform: uppercase;
+    font: 1.5em "Fira Mono", monospace;
+    line-height:1.8em;
+  }
+
+  img.planni-char {
+    width: 300px;
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+  }
+}
