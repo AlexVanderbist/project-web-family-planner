@@ -8,12 +8,24 @@ function OpenWeatherService($log, $http) {
 
   var apiKey = '5e82f8d95dafe191dfa259b75be0520c';
 
-  svc.getTodayWeather = function () {
+  svc.getTodayWeather = function (location) {
     return $http({
       method: 'GET',
       url: 'http://api.openweathermap.org/data/2.5/weather',
       params: {
-        q: 'Antwerp,BE',
+        q: location,
+        apikey: apiKey,
+        units: 'metric'
+      }
+    });
+  };
+
+  svc.getWeatherForecast = function (location) {
+    return $http({
+      method: 'GET',
+      url: 'http://api.openweathermap.org/data/2.5/forecast',
+      params: {
+        q: location,
         apikey: apiKey,
         units: 'metric'
       }

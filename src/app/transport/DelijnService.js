@@ -3,10 +3,10 @@ angular.module('app')
 
 /** @NgInject */
 function DelijnService($http) {
-  this.getNextBusses = function (callback) {
+  this.getNextBusses = function (busstop) {
     return $http({
       method: 'GET',
-      url: 'https://www.delijn.be/rise-api-core/haltes/doorkomstenditmoment/105458/13'
+      url: 'https://www.delijn.be/rise-api-core/haltes/doorkomstenditmoment/'+busstop+'/13'
     })
   };
 }

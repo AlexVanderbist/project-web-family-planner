@@ -25,6 +25,9 @@
       left: 360px;
       color: lightgrey;
     }
+    .content-bottom {
+      color: lightgrey;
+    }
     .landscape {
       background-color: $sky-night;
     }
@@ -49,9 +52,10 @@
     .sun {
       transform: translate(200px, 400px);
     }
-    .moon {}
+    .moon {
+    }
   }
-  
+
   .overlay {
     position: absolute;
     top: 0;
@@ -62,6 +66,15 @@
   .content {
     left: 130px;
     top: 30px;
+    transition: all $animationTime;
+  }
+
+  .content-bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 15px;
+    left: 0;
+    text-align: center;
     transition: all $animationTime;
   }
 
@@ -101,8 +114,7 @@
     height: 50px;
     border-radius: 50%;
     background: $crater;
-    box-shadow: 120px 80px 0 $crater, 100px -60px 0 -20px $crater, -70px 40px 0 -20px $crater, -20px -50px 0 -15px $crater, -20px 120px 0 -15px $crater, 50px 50px 0 -15px $crater;
-    ;
+    box-shadow: 120px 80px 0 $crater, 100px -60px 0 -20px $crater, -70px 40px 0 -20px $crater, -20px -50px 0 -15px $crater, -20px 120px 0 -15px $crater, 50px 50px 0 -15px $crater;;
   }
   .trees {
     position: absolute;

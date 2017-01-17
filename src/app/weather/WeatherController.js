@@ -2,7 +2,7 @@ angular.module('app')
   .controller('WeatherController', WeatherController);
 
 /** @ngInject */
-function WeatherController($document, $log, $timeout, OpenWeatherService, $interval) {
+function WeatherController($document, $log, $timeout, OpenWeatherService, $interval, ScreenConfigService) {
   var vm = this;
 
   vm.thermometerStyle = {
@@ -20,19 +20,27 @@ function WeatherController($document, $log, $timeout, OpenWeatherService, $inter
   function init() {
     $log.debug("WeatherController loaded.");
 
-    OpenWeatherService.getTodayWeather().then(function (response) {
-      vm.weatherDescription = response.data.weather[0].main;
-      vm.temperature = response.data.main.temp;
-      vm.thermometerStyle = {
-        height: getPercentageFromValues(vm.temperature, -10, 35)
-      };
-    }, function (response) {
-      $log.error("Couldn't get weather from OpenWeatherService", response);
-    });
+    // Load todays weather
+    OpenWeatherService.getTodayWeather(ScreenConfigService.screenConfig.household.address)
+      .then(function (response) {
+        vm.weatherDescription = response.data.weather[0].main;
+        vm.weather = response.data.main;
+        vm.thermometerStyle = {
+          height: getPercentageFromValues(vm.temperature, -10, 35)
+        };
+      });
 
-    $interval(function() {
+    // Load tomorrows weather
+    OpenWeatherService.getWeatherForecast(ScreenConfigService.screenConfig.household.address)
+      .then(function (response) {
+        console.log(response);
+        vm.weather = response.data.main;
+      });
+
+    $interval(function () {
       vm.time = (vm.time === 'day' ? 'night' : 'day');
     }, 5000);
   }
+
   init();
 }

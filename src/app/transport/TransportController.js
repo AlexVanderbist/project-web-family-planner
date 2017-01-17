@@ -2,7 +2,7 @@ angular.module('app')
   .controller('TransportController', TransportController);
 
 /** @NgInject */
-function TransportController(DelijnService, $log, $window, $rootScope) {
+function TransportController(DelijnService, $log, $window, $rootScope, ScreenConfigService, $scope) {
 
   // TODO: Preload the bus schedule before changing to slide
 
@@ -34,11 +34,15 @@ function TransportController(DelijnService, $log, $window, $rootScope) {
   function _init() {
     $log.debug('TransportController loaded!');
 
-    DelijnService.getNextBusses().then(
+    DelijnService.getNextBusses(ScreenConfigService.screenConfig.busstop).then(
       function successResponse(response) {
-        vm.nextBusses = response.data.lijnen;
+        if(response.data && response.data.lijnen) {
+          vm.nextBusses = response.data.lijnen;
+        } else vm.error = "No busstop set in Planni Housekeeping"
       },
-      function errorResponse(response) {});
+      function errorResponse(response) {
+        $rootScope.nextSlide();
+      });
 
     $rootScope.$on('$stateChangeStart', sketch.destroy);
   }
