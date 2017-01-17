@@ -34,7 +34,7 @@ function WeatherController($document, $log, $timeout, OpenWeatherService, $inter
     OpenWeatherService.getWeatherForecast(ScreenConfigService.screenConfig.household.address)
       .then(function (response) {
         console.log(response);
-        vm.weather = response.data.main;
+        vm.weatherForecast = response.data;
       });
 
     $interval(function () {
