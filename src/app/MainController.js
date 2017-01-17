@@ -15,6 +15,10 @@ function MainController($timeout, $state, $log, $rootScope) {
     {
       name: 'transport',
       duration: 5000
+    },
+    {
+      name: 'messages',
+      duration: 5000
     }
   ];
 
