@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 422.661 275.987" style="enable-background:new 0 0 422.661 275.987;" xml:space="preserve">
+<g id="Square">
+	<g>
+		<rect y="13.777" style="fill:#009DDE;" width="422.661" height="13.777"/>
+		<rect y="262.21" style="fill:#009DDE;" width="422.661" height="13.777"/>
+		<path style="fill:#009DDE;" d="M422.661,13.777v262h-14.399v-262H422.661z"/>
+		<rect y="13.777" style="fill:#009DDE;" width="14.221" height="262"/>
+	</g>
+</g>
+<g id="inner">
+	<g>
+		<rect x="129.412" y="56.131" style="fill:#009DDE;" width="254.249" height="13.777"/>
+		<rect x="129.412" y="219.767" style="fill:#009DDE;" width="254.249" height="13.777"/>
+		<path style="fill:#009DDE;" d="M383.661,56.285v177.193h-14.399V56.285H383.661z"/>
+		<rect x="129.412" y="56.131" style="fill:#009DDE;" width="14.221" height="177.347"/>
+	</g>
+</g>
+<g id="ears">
+	<rect x="359.06" style="fill:#009DDE;" width="24.601" height="13.777"/>
+	<rect x="38.661" style="fill:#009DDE;" width="24.601" height="13.777"/>
+</g>
+<g id="eyes">
+	<circle style="fill:none;stroke:#009DDE;stroke-width:14;stroke-miterlimit:10;" cx="221.891" cy="124.777" r="17.196"/>
+	<circle style="fill:none;stroke:#009DDE;stroke-width:14;stroke-miterlimit:10;" cx="291.182" cy="124.777" r="17.196"/>
+</g>
+<g id="mouth">
+	<rect x="177.57" y="176.214" style="fill:#009DDE;" width="157.591" height="13.777"/>
+	<rect x="177.57" y="162.437" style="fill:#009DDE;" width="14.249" height="27.553"/>
+	<rect x="320.912" y="162.437" style="fill:#009DDE;" width="14.249" height="27.553"/>
+</g>
+</svg>
