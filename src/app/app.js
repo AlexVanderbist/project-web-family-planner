@@ -17,7 +17,7 @@ angular
      * Redirect to setup when screen is not registered yet
      */
     $transitions.onStart({}, function (trans) { // on any app route , do the following...
-      let toState = trans.to();
+      var toState = trans.to();
       trans.addResolvable({
         token: 'screenConfig', // the token can be anything, here, we never actually use it in this specific case
         deps: ['$state', 'ScreenConfigService', '$q'], // inject what I need
@@ -26,7 +26,7 @@ angular
 
             ScreenConfigService.getScreenConfig(function (err, config) {
               // If the screen is not registered -> redirect to setup
-              if (err && !toState.name.includes('setup')) {
+              if (err && ! toState.name.includes('setup')) {
                 $state.go('setup');
                 reject();
               } else {
