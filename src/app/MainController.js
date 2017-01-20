@@ -38,7 +38,7 @@ function MainController($timeout, $state, $log, $rootScope, ApiService) {
       if($rootScope.currentSlideId >= $rootScope.slides.length) {
         $rootScope.currentSlideId = 0;
         $log.debug('reached the end; full refresh');
-        window.location.reload(true);
+        return window.location.reload(true);
       }
 
       $state.go('app.' + $rootScope.slides[$rootScope.currentSlideId].name);
