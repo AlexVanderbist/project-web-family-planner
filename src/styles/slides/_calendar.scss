@@ -1,0 +1,30 @@
+.slide.slide-calendar {
+  background: url('../images/slides/calendar/bg.svg');
+  h1 {
+    position: absolute;
+    display: block;
+    width: 100%;
+    padding: 0 100px;
+    text-align: center;
+    top: 45px;
+    font-size:2.5em;
+  }
+  .content {
+    ul {
+      list-style: none;
+      li {
+        margin-bottom:3px;
+      }
+    }
+    small {
+      color: #919191;
+      font-size: 65%;
+    }
+    line-height: 1em;
+    font-size: 2em;
+    left: 123px;
+    top: 175px;
+    overflow: hidden;
+    max-height: 280px;
+  }
+}

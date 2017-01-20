@@ -6,7 +6,7 @@ angular
 function MainController($timeout, $state, $log, $rootScope, ApiService) {
 
   // Variables
-  $rootScope.currentSlideId = 0;
+  $rootScope.currentSlideId = -1;
   $rootScope.slides = [];
 
   $rootScope.createSlides = function (response) {
@@ -28,13 +28,27 @@ function MainController($timeout, $state, $log, $rootScope, ApiService) {
 
     // Cycle through slides normally
     if($rootScope.slides.length) {
-      //$log.debug($rootScope.currentSlideId, $rootScope.slides);
 
-      $rootScope.currentSlideId = ($rootScope.currentSlideId + 1 >= $rootScope.slides.length ? 0 : $rootScope.currentSlideId + 1);
+      // Cycle slides
+      $rootScope.currentSlideId++;
+
+      $log.debug($rootScope.currentSlideId, $rootScope.slides);
+
+      // If we reached the end; refresh
+      if($rootScope.currentSlideId >= $rootScope.slides.length) {
+        $rootScope.currentSlideId = 0;
+        $log.debug('reached the end; full refresh');
+        window.location.reload(true);
+      }
 
       $state.go('app.' + $rootScope.slides[$rootScope.currentSlideId].name);
       $timeout.cancel($rootScope.slideTimeout);
       $rootScope.slideTimeout = $timeout($rootScope.nextSlide, $rootScope.slides[$rootScope.currentSlideId].duration);
+
+      // if($rootScope.slides[$rootScope.currentSlideId].name != 'calendar') {
+      //   // Calendar will redirect on its own when done
+      //   $rootScope.slideTimeout = $timeout($rootScope.nextSlide, $rootScope.slides[$rootScope.currentSlideId].duration);
+      // }
     } else {
       $timeout.cancel($rootScope.slideTimeout);
       $rootScope.slideTimeout = $timeout($rootScope.nextSlide, 1000);

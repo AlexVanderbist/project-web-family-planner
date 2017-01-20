@@ -53,8 +53,6 @@ function TransportController(DelijnService, $log, $window, $rootScope, ScreenCon
 
 
   // TODO: Move sketch stuff for bg to a directive
-
-
   Building = function (config) {
     return this.reset(config);
   };

@@ -13,7 +13,7 @@
   "overrides": {
     "angular-i18n": {
       "main": [
-        "./angular-locale_be.js"
+        "./angular-locale_nl-be.js"
       ]
     }
   }

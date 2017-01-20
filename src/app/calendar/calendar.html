@@ -1,0 +1,12 @@
+<div class="slide slide-calendar">
+  <h1>{{calendar.calendar.name}}</h1>
+
+  <div class="content">
+    <ul>
+      <li ng-repeat="event in calendar.calendar.events">
+        <small>{{event.dtstart_array[1]  | date:'d MMMM, HH:mm'}}</small><br/>
+        {{event.summary}} <small>({{event.location}})</small>
+      </li>
+    </ul>
+  </div>
+</div>

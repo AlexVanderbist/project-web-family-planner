@@ -33,5 +33,10 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: 'messages',
       templateUrl: 'app/messages/messages.html',
       controller: 'MessagesController as messages'
+    })
+    .state('app.calendar', {
+      url: 'calendar',
+      templateUrl: 'app/calendar/calendar.html',
+      controller: 'CalendarController as calendar'
     });
 }
