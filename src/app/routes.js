@@ -5,7 +5,7 @@ angular
 /** @ngInject */
 function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
   // $locationProvider.html5Mode(true).hashPrefix('!');
-  $urlRouterProvider.otherwise('/weather');
+  $urlRouterProvider.otherwise('/');
 
   $stateProvider
     .state('setup', {
@@ -16,7 +16,7 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('app', {
       url: '/',
       template: '<ui-view/>',
-      redirectTo: 'app.weather',
+      // redirectTo: 'app.weather',
       controller: 'MainController as main'
     })
     .state('app.weather', {
