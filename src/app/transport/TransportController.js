@@ -34,7 +34,7 @@ function TransportController(DelijnService, $log, $window, $rootScope, ScreenCon
   function _init() {
     $log.debug('TransportController loaded!');
 
-    DelijnService.getNextBusses(ScreenConfigService.screenConfig.busstop).then(
+    DelijnService.getNextBusses(ScreenConfigService.screenConfig.household.busstop).then(
       function successResponse(response) {
         if(response.data && response.data.lijnen) {
           vm.nextBusses = response.data.lijnen;
