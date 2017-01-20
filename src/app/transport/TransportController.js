@@ -38,7 +38,10 @@ function TransportController(DelijnService, $log, $window, $rootScope, ScreenCon
       function successResponse(response) {
         if(response.data && response.data.lijnen) {
           vm.nextBusses = response.data.lijnen;
-        } else vm.error = "No busstop set in Planni Housekeeping"
+        } else {
+          // $rootScope.nextSlide();
+          vm.notice = "No busses driving right now";
+        }
       },
       function errorResponse(response) {
         $rootScope.nextSlide();

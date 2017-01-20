@@ -12,6 +12,10 @@ function ApiService($http, $log, ScreenConfigService, AppConfig) {
     }
   };
 
+  svc.getAvailable = function () {
+    return $http.get(AppConfig.apiUrl + 'available', options);
+  }
+
   svc.getMessages = function (eventId) {
     return $http.get(AppConfig.apiUrl + 'messages', options);
   }

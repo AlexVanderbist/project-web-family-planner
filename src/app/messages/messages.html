@@ -1,18 +1,9 @@
-<div class="slide slide-messages">
+<div class="slide slide-messages" ng-show="messages.messages.length">
   <div class="messages">
-    <aside class="note-wrap note-yellow">
-      <p>Don't forget to pick-up milk if you're home early!</p>
-      <span>Love, mum</span>
+    <aside class="note-wrap note-yellow" ng-repeat="message in messages.messages">
+      <p>{{message.message}}</p>
+      <span>{{message.signature}}</span>
     </aside>
-
-    <aside class="note-wrap note-pink note-big">
-      <p>Hi family, <br/>I'm at Marcus' for the afternoon and will be back around 8PM. Let's have dinner with the family then. I'm making garlic bread! Let me know when you're home.</p>
-      <span>XO Dad</span>
-    </aside>
-
-    <aside class="note-wrap note-blue">
-      <p>Don't forget grandma's birthday tomorrow!</p>
-      <span>Alex</span>
-    </aside>
+    <!--note-big-->
   </div>
 </div>

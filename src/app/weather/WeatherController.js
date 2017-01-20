@@ -33,13 +33,12 @@ function WeatherController($document, $log, $timeout, OpenWeatherService, $inter
     // Load tomorrows weather
     OpenWeatherService.getWeatherForecast(ScreenConfigService.screenConfig.household.address)
       .then(function (response) {
-        console.log(response);
-        vm.weatherForecast = response.data;
+        vm.weatherForecast = response.data.list[3];
       });
 
-    $interval(function () {
-      vm.time = (vm.time === 'day' ? 'night' : 'day');
-    }, 5000);
+    // $interval(function () {
+    //   vm.time = (vm.time === 'day' ? 'night' : 'day');
+    // }, 5000);
   }
 
   init();

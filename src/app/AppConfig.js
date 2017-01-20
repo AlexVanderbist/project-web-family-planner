@@ -1,6 +1,6 @@
 angular
   .module('app')
   .constant('AppConfig', {
-    apiUrl: 'http://planni.app/api/',
-    uiUrl: 'http://planni.app/'
+    apiUrl: 'http://planni-housekeeping-alexvanderbist.c9users.io/api/',
+    uiUrl: 'http://bit.do/planni/'
   });

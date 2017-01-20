@@ -5,9 +5,8 @@
     <h1>{{transport.formatDepartureTime(transport.nextBusses[0].vertrekTijd)}} minuten</h1>
   </div>
 
-  <div class="content" ng-show="transport.error">
-    <h2>Error:</h2>
-    <h3>{{transport.error}}</h3>
+  <div class="content" ng-show="transport.notice">
+    <h2>{{transport.notice}}</h2>
   </div>
 
   <div class="schedule-ticker">
