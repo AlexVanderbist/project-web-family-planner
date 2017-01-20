@@ -1,6 +1,6 @@
 <div class="slide slide-messages" ng-show="messages.messages.length">
   <div class="messages">
-    <aside class="note-wrap note-yellow" ng-repeat="message in messages.messages">
+    <aside class="note-wrap note-{{message.color}}" ng-class="{ 'note-big': message.message.length > 120 }" ng-repeat="message in messages.messages">
       <p>{{message.message}}</p>
       <span>{{message.signature}}</span>
     </aside>
